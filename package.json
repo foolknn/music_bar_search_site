@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "dayjs": "^1.10.3",
+    "react": "^17.0.1"
+  },
+  "scripts": {
+    "dev": "development"
+  }
+}
