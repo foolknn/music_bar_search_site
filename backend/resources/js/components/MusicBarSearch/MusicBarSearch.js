@@ -9,12 +9,12 @@ const MusicBarSearch = () => {
 	const [selectPref, setSelectPref] = useState("SS01");
 	const [freeWord, setFreeWord] = useState("");
 	const { search, handleSubmit, watch, error } = useForm();
+	
 	const onSubmit = () => {
 		//TODO aタグでパラメーターを渡し検索結果ページを表示する
 		console.log(selectPref,freeWord);
 	};
 
-	
 	const axios = axiosBase.create({
 		baseURL: "http://localhost:80",
 		headers: {

@@ -9,8 +9,8 @@ class EntSearchParams extends Model
 {
     use HasFactory;
     public $area;
-    public $name;
-    public $time;
-    public $date;
-    public $count;
+    public $freeWord;
+    public $isShow;
+    public $isBand;
+
 }
