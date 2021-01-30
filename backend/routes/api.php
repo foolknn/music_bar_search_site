@@ -3,6 +3,8 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TopPageController;
+use App\Http\Controllers\SearchResultController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -20,5 +22,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::group(['middleware' => ['api']], function () {
     Route::get('/getPref', [TopPageController::class,'getPref']);
-    Route::get('/getGenre', [TopPageController::class,'getGenre']);
+    Route::get('/getResult', [SearchResultController::class,'getResult']);
 });

@@ -1923,139 +1923,6 @@ var MusicBarResult = function MusicBarResult() {
 
 /***/ }),
 
-/***/ "./resources/js/components/MusicBarSearch/MusicBarSearch.js":
-/*!******************************************************************!*\
-  !*** ./resources/js/components/MusicBarSearch/MusicBarSearch.js ***!
-  \******************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
-/* harmony import */ var react_hook_form__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-hook-form */ "./node_modules/react-hook-form/dist/index.esm.js");
-/* harmony import */ var _axiosSetting__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../axiosSetting */ "./resources/js/axiosSetting.js");
-/* harmony import */ var _MusicBarResult__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./MusicBarResult */ "./resources/js/components/MusicBarSearch/MusicBarResult.js");
-
-
-
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
-
-function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
-
-function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
-
-function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
-
-
-
-
-
-
-
-var MusicBarSearch = function MusicBarSearch() {
-  var _jsx2;
-
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([]),
-      _useState2 = _slicedToArray(_useState, 2),
-      prefList = _useState2[0],
-      setPrefList = _useState2[1];
-
-  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([]),
-      _useState4 = _slicedToArray(_useState3, 2),
-      optionsList = _useState4[0],
-      setOptionList = _useState4[1];
-
-  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)("SS01"),
-      _useState6 = _slicedToArray(_useState5, 2),
-      selectPref = _useState6[0],
-      setSelectPref = _useState6[1];
-
-  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
-      _useState8 = _slicedToArray(_useState7, 2),
-      freeWord = _useState8[0],
-      setFreeWord = _useState8[1];
-
-  var _useForm = (0,react_hook_form__WEBPACK_IMPORTED_MODULE_3__.useForm)(),
-      search = _useForm.search,
-      handleSubmit = _useForm.handleSubmit,
-      watch = _useForm.watch,
-      error = _useForm.error;
-
-  var axios = (0,_axiosSetting__WEBPACK_IMPORTED_MODULE_4__.default)();
-
-  var onSubmit = function onSubmit() {
-    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("a", {
-      href: "site/result"
-    });
-  };
-
-  (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function (req, res, next) {
-    axios.get("/api/getPref").then(function (res) {
-      setPrefList(res.data.results.service_area);
-      setOptionList(res.data.results.service_area.map(function (pref) {
-        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("option", {
-          value: pref.code,
-          children: pref.name
-        }, pref.code);
-      }));
-    })["catch"](function (error) {
-      console.log(error);
-    });
-  }, [prefList, setPrefList]);
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("form", {
-        onSubmit: handleSubmit(onSubmit),
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-          "class": "input-group",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
-            "class": "form-outline",
-            children: prefList.length > 0 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("select", {
-              "class": "form-select",
-              ref: search,
-              name: "pref",
-              value: selectPref,
-              onChange: function onChange(e) {
-                setSelectPref(e.target.value);
-              },
-              children: optionsList
-            })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
-            "class": "form-outline",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("input", (_jsx2 = {
-              id: "search-input",
-              type: "search"
-            }, _defineProperty(_jsx2, "id", "form2"), _defineProperty(_jsx2, "name", "freeWord"), _defineProperty(_jsx2, "ref", search), _defineProperty(_jsx2, "onChange", function onChange(e) {
-              setFreeWord(e.target.value);
-            }), _defineProperty(_jsx2, "value", freeWord), _jsx2))
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("button", {
-            id: "search-button",
-            type: "submit",
-            "class": "btn btn-primary",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("i", {
-              "class": "fas fa-search"
-            })
-          })]
-        })
-      })
-    })
-  });
-}; // export default MusicBarSearch;
-
-
-react_dom__WEBPACK_IMPORTED_MODULE_2__.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(MusicBarSearch, {}), document.getElementById("app"));
-
-/***/ }),
-
 /***/ "./node_modules/object-assign/index.js":
 /*!*********************************************!*\
   !*** ./node_modules/object-assign/index.js ***!
@@ -33700,7 +33567,7 @@ if (false) {} else {
 /************************************************************************/
 /******/ 	// startup
 /******/ 	// Load entry module
-/******/ 	__webpack_require__("./resources/js/components/MusicBarSearch/MusicBarSearch.js");
+/******/ 	__webpack_require__("./resources/js/components/MusicBarSearch/MusicBarResult.js");
 /******/ 	// This entry module used 'exports' so it can't be inlined
 /******/ })()
 ;

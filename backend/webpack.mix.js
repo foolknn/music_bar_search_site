@@ -13,5 +13,6 @@ const mix = require('laravel-mix');
 
 mix.js('resources/js/app.js', 'public/js')
     .js('resources/js/components/MusicBarSearch/MusicBarSearch.js', 'public/js/mbs.js')
+    .js('resources/js/components/MusicBarSearch/MusicBarResult.js', 'public/js/mbr.js')
     .react()
     .sass('resources/sass/app.scss', 'public/css');

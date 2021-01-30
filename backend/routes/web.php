@@ -17,8 +17,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('site/home',[App\Http\Controllers\TopPageController::class, 'index'])->name('site/home');
-// Route::get('site/getPref',[App\Http\Controllers\TopPageController::class, 'getPref'])->name('site/getPref');
+Route::get('site/home', [App\Http\Controllers\TopPageController::class, 'index'])->name('site/home');
+Route::get('site/result', [App\Http\Controllers\SearchResultController::class, 'index'])->name('site/result');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
